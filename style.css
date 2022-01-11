@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* to directly click on the button and not on the icon use pointer events none */
+i,
+svg {
+  pointer-events: none;
+}
+
+.sequencer {
+  display: flex;
+  flex-direction: column;
+  /* border: 5px solid green; */
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.kick-track,
+.snare-track,
+.hihat-track {
+  /* border: 2px solid black; */
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.controls {
+  /* border: 2px solid brown; */
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0rem 2rem;
+}
+
+/* The button with mute icon in the div with class controls */
+.controls button {
+  padding: 1rem;
+  border: none;
+  background: rgb(87, 87, 87);
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+/* styling all the pads from b0 to b7 */
+.kick-pad,
+.snare-pad,
+.hihat-pad {
+  /* border: 2px solid red; */
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+}
+
+/* giving color and border to all the pads group individually  */
+.kick-pad {
+  background: rgb(190, 228, 238);
+  border: 4px solid rgb(37, 176, 211);
+}
+
+.snare-pad {
+  background: rgb(233, 192, 235);
+  border: 4px solid rgb(222, 74, 230);
+}
+
+.hihat-pad {
+  background: rgb(238, 221, 190);
+  border: 4px solid rgb(223, 165, 59);
+}
+
+/* giving all the pads the active class */
+.kick-pad.active {
+  background: rgb(37, 176, 211);
+}
+
+.snare-pad.active {
+  background: rgb(222, 74, 230);
+}
+
+.hihat-pad.active {
+  background: rgb(223, 165, 59);
+}
+
+/* giving the parent div of pads the display flex */
+.kick,
+.snare,
+.hihat {
+  display: flex;
+  /* border: 2px solid black; */
+}
+
+.pad {
+  transition: all 0.5s ease;
+}
+
+/* The play button */
+.play {
+  padding: 0.7rem 2rem;
+  font-size: 1.5rem;
+  background: rgb(87, 87, 87);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+}
+
+select {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.mute.active {
+  background: rgb(185, 185, 185);
+}
+
+.tempo {
+  /* border: 2px solid black; */
+  margin: 3rem;
+  width: 30%;
+}
+
+.tempo p {
+  font-size: 1.5rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+.tempo-slider {
+  padding: 0.1rem;
+  -webkit-appearance: none;
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  background: rgb(119, 118, 118);
+  border-radius: 1rem;
+  cursor: pointer;
+}
